@@ -1,8 +1,6 @@
-﻿app.controller("menuController",
-    [
-        "$scope", "$window", "menuService", "$location", "LoginService", "$filter", "$timeout", "vrtlDirr",
-        function ($scope, $window, menuService, $location, LoginService, $filter, $timeout, vrtlDirr) {
-            $scope.name = 'sadik';
+﻿app.controller('menuController',["$scope","$window", "$location", "$filter", "$timeout",function ($scope, $window, $location, $filter, $timeout) {
+    $scope.name = 'Mohammad Sadikur Rahman';
+
 
         }
     ]);

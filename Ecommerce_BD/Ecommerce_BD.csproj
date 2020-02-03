@@ -156,6 +156,7 @@
   <ItemGroup>
     <Content Include="Apps\app.js" />
     <Content Include="Apps\JScontrollers\menuController.js" />
+    <Content Include="Apps\JSservices\menuService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -985,7 +986,6 @@
     <Content Include="Views\Home\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Apps\JSservices\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

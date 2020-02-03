@@ -1,4 +1,4 @@
-﻿var app = angular.module('EcommerceBD', ['ui.grid.selection', 'ui.grid', 'ui.grid.pagination', 'ui.grid.exporter', 'datatables', 'angularUtils.directives.dirPagination', 'ngSanitize', 'ui.select', 'angularModalService', 'akFileUploader', '720kb.datepicker']);
+﻿var app = angular.module('EcommerceBD', []);
 
 app.run(function ($rootScope, $templateCache) {
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
@@ -10,3 +10,6 @@ app.run(function ($rootScope, $templateCache) {
 app.factory('Data', function () {
     return { obj: '' };
 });
+
+
+//'ui.grid.selection', 'ui.grid', 'ui.grid.pagination', 'ui.grid.exporter', 'datatables', 'angularUtils.directives.dirPagination', 'ngSanitize', 'ui.select', 'angularModalService', 'akFileUploader', '720kb.datepicker'
