@@ -12,5 +12,9 @@ namespace Ecommerce_BD_DAL.Repository.Query
         {
             return Query($"");
         }
+        public DataTable GetMenuData()
+        {
+            return Query($"SELECT CATEGORY_ID,CATEGORY_NAME FROM CATEGORIES");
+        }
     }
 }

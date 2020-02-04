@@ -11,7 +11,8 @@ namespace Ecommerce_BD.Controllers
 {
     public class HomeController : Controller
     {
-        private IMenu repository;
+        
+        
         public ActionResult Index()
         {
             return View();
@@ -35,17 +36,7 @@ namespace Ecommerce_BD.Controllers
         {
             return View();
         }
-
-        public JsonResult GetMenuData()
-        {
-            //string language;
-            //string roleCode = "";
-            
-            var menuData = repository.MenuData();
-            string JSONstring = string.Empty;
-            JSONstring = JsonConvert.SerializeObject(menuData);
-            
-            return Json(JSONstring, JsonRequestBehavior.AllowGet);
-        }
+        
+        
     }
 }

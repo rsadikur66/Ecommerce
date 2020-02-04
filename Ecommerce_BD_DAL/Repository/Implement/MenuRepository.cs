@@ -27,7 +27,8 @@ namespace Ecommerce_BD_DAL.Repository.Implement
 
         public DataTable MenuData()
         {
-            throw new NotImplementedException();
+            var data = obj.GetMenuData();
+            return data;
         }
     }
 }
