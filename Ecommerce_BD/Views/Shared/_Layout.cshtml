@@ -30,6 +30,11 @@
         {
             float:right;
         }
+        .scrollable-menu {
+            height: auto;
+            max-height: 200px;
+            overflow-x: hidden;
+        }
     </style>
 
     @*<script src="~/Scripts/angular-sanitize.min.js"></script>
@@ -49,9 +54,9 @@
             <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li ng-repeat="item in obj.Virus">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Home</a>
+                    <ul class="collapse list-unstyled scrollable-menu" id="homeSubmenu">
+                        <li ng-repeat="item in obj.Virus" >
                             <a href="~/Home/Index">{{item.CATEGORY_NAME}}</a>
                         </li>
                         @*<li>
