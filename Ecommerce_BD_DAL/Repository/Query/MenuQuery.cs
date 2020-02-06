@@ -16,5 +16,11 @@ namespace Ecommerce_BD_DAL.Repository.Query
         {
             return Query($"SELECT CATEGORY_ID,CATEGORY_NAME FROM CATEGORIES");
         }
+
+        public DataTable GetHomeData()
+        {
+            return Query($"Select * from Products");
+        }
+        
     }
 }

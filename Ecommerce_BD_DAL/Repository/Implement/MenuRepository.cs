@@ -30,5 +30,10 @@ namespace Ecommerce_BD_DAL.Repository.Implement
             var data = obj.GetMenuData();
             return data;
         }
+        public DataTable GetHomeData()
+        {
+            var data = obj.GetHomeData();
+            return data;
+        }
     }
 }

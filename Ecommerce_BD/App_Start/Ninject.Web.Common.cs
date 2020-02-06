@@ -46,7 +46,7 @@ namespace Ecommerce_BD.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IMenu>().To<MenuRepository>();
+                kernel.Bind<IMenu>().To<MenuRepository>();                
                 RegisterServices(kernel);
                 return kernel;
             }
