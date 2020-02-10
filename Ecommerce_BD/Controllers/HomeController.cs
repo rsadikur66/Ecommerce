@@ -22,7 +22,7 @@ namespace Ecommerce_BD.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpGet]
         public ActionResult GetHomeData()
         {
             try
