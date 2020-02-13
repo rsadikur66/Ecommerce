@@ -1,5 +1,5 @@
 ﻿app.controller('menuController', ["$scope", "$window", "$location", "$filter", "$timeout", "menuService", function ($scope, $window, $location, $filter, $timeout, menuService) {
-    $scope.name = 'sDokan';
+    $scope.name = "DokanBD";
     $scope.obj = {};
     $scope.obj.Virus = {};
     getgriddata();

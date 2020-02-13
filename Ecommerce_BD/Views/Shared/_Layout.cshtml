@@ -35,6 +35,12 @@
             max-height: 200px;
             overflow-x: hidden;
         }
+        .webtitle {
+            color: #00fa9a;
+            font-weight: bold;
+            font-size: xx-large;
+            cursor: pointer;
+        }
     </style>
 
     @*<script src="~/Scripts/angular-sanitize.min.js"></script>
@@ -50,7 +56,7 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 @*<h3>{{name}}</h3>*@
-                <a href="../Home/HomePage" class="active" style="cursor: pointer">{{name}}</a>
+                <a href="../Home/HomePage" class="active webtitle">{{name}}</a>
             </div>
             <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
@@ -69,13 +75,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Setup</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="../Setup/ProductSetup">Product Setup</a>
                         </li>
                         <li>
                             <a href="#">Page 2</a>
