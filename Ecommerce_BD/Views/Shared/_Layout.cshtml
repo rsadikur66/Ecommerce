@@ -11,12 +11,17 @@
     @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />*@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/layout.css" />
+    <link href="~/Content/select.css" rel="stylesheet" />
+    <link href="~/Content/select2.css" rel="stylesheet" />
+    <link href="~/Content/selectize.default.css" rel="stylesheet" />
     @*css links ends*@
 
     @*js links starts*@
-    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/select.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <script src="~/Apps/app.js"></script>
@@ -26,15 +31,16 @@
 
 
     <style>
-        .rightAlign
-        {
-            float:right;
+        .rightAlign {
+            float: right;
         }
+
         .scrollable-menu {
             height: auto;
             max-height: 200px;
             overflow-x: hidden;
         }
+
         .webtitle {
             color: #00fa9a;
             font-weight: bold;

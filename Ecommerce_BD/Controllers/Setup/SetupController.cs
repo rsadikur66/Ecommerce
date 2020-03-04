@@ -18,9 +18,6 @@ namespace Ecommerce_BD.Controllers.Setup
         {
             return View();
         }
-        public ActionResult ProductSetup2()
-        {
-            return View();
-        }
+       
     }
 }

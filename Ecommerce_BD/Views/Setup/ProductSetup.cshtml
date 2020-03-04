@@ -2,6 +2,12 @@
 @{
     ViewBag.Title = "ProductSetup";
 }
+<link href="~/Content/select.css" rel="stylesheet" />
+<link href="~/Content/select2.css" rel="stylesheet" />
+<link href="~/Content/selectize.default.css" rel="stylesheet" />
+<script src="~/Apps/JScontrollers/Setup/productSetupController.js"></script>
+<script src="~/Apps/JSservices/Setup/productSetupService.js"></script>
+<script src="~/Scripts/angular-sanitize.min.js"></script>
 <style>
     .float-right {
         float: right;
@@ -14,54 +20,48 @@
 <h2>ProductSetup</h2>
 
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-2">
-                <label class="float-right">Product Name :</label>
-            </div>
-            <div class="col-md-2">
-                <input id="txtProductName" class="form-control float-left" />
-            </div>
-            <div class="col-md-2">
-                <label class="float-right">Category :</label>
-            </div>
-            <div class="col-md-2">
-                <div class="">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Select Category
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Television</a></li>
-                        <li><a href="#">Fridge</a></li>
-                        <li><a href="#">Motorcycle</a></li>
-                        <li><a href="#">Desktop</a></li>
-                        <li><a href="#">Laptop</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <label class="float-right">Brand :</label>
-            </div>
-            <div class="col-md-2">
-                <div class="">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Select Brand
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Nokia</a></li>
-                        <li><a href="#">Xiomi</a></li>
-                        <li><a href="#">Oppo</a></li>
-                        <li><a href="#">Samsung</a></li>
-                        <li><a href="#">Ducatti</a></li>
-                        <li><a href="#">Yamaha</a></li>
-                        <li><a href="#">Suzuki</a></li>
-                    </ul>
-                </div>
+<div class="row" ng-app="EcommerceBD" ng-controller="productSetupController">
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <label class="float-right">Product Name :</label>
+        </div>
+        <div class="col-md-2">
+            <input id="txtProductName" class="form-control float-left" />
+        </div>
+        <div class="col-md-2">
+            <label class="float-right">Category :</label>
+        </div>
+        <div class="col-md-2">
+            <ui-select ng-model="obj.A.selected" theme="select2"  style="min-width: 245px">
+                <ui-select-match placeholder="Select">{{$select.selected.Category_Name}}</ui-select-match>
+                    <ui-select-choices repeat="A in obj.ambulance | propsFilter: {Category_Name: $select.search}">
+                        <div ng-bind-html="A.Category_Name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Category_Id" ng-bind="obj.Category_Id=obj.A.selected.Category_Id" class=""/>
+            
+        </div>
+        <div class="col-md-2">
+            <label class="float-right">Brand :</label>
+        </div>
+        <div class="col-md-2">
+            <div class="">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Select Brand
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Nokia</a></li>
+                    <li><a href="#">Xiomi</a></li>
+                    <li><a href="#">Oppo</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Ducatti</a></li>
+                    <li><a href="#">Yamaha</a></li>
+                    <li><a href="#">Suzuki</a></li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
 

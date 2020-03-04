@@ -1,3 +1,6 @@
+using Ecommerce_BD_DAL.Repository.Implement.Setup;
+using Ecommerce_BD_DAL.Repository.Interface.Setup;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Ecommerce_BD.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Ecommerce_BD.App_Start.NinjectWebCommon), "Stop")]
 
@@ -46,7 +49,8 @@ namespace Ecommerce_BD.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IMenu>().To<MenuRepository>();                
+                kernel.Bind<IMenu>().To<MenuRepository>();          
+                kernel.Bind<IProductSetup>().To<ProductSetupRepository>();          
                 RegisterServices(kernel);
                 return kernel;
             }

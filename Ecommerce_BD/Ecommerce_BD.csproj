@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\Setup\ProductSetupController.cs" />
     <Compile Include="Controllers\Setup\SetupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,13 +187,19 @@
     <Content Include="Apps\app.js" />
     <Content Include="Apps\JScontrollers\homeController.js" />
     <Content Include="Apps\JScontrollers\menuController.js" />
+    <Content Include="Apps\JScontrollers\Setup\productSetupController.js" />
     <Content Include="Apps\JSservices\homeService.js" />
     <Content Include="Apps\JSservices\menuService.js" />
+    <Content Include="Apps\JSservices\Setup\productSetupService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\layout.css" />
+    <Content Include="Content\select.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.png" />
+    <Content Include="Content\selectize.default.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -200,6 +207,8 @@
     <Content Include="images\motorola-moto-g8-plus.jpg" />
     <Content Include="images\Nokia-6.1-Plus.jpg" />
     <Content Include="images\Samsung Galaxy A50.jpg" />
+    <Content Include="images\select2.png" />
+    <Content Include="images\walton_32_full_hd_smart_tv_-_we4-dh32-bx220.jpg" />
     <Content Include="images\Xiaomi-Redmi-Note-8-Black.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -227,6 +236,7 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular_intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -994,6 +1004,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\select.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Scripts\test-bundles\angular-aria.js" />
     <Content Include="Scripts\test-bundles\angular-cookies.js" />
@@ -1022,11 +1033,10 @@
     <Content Include="Views\Setup\ProductSetup.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Apps\JScontrollers\Setup\" />
-    <Folder Include="Apps\JSservices\Setup\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Menu\" />
+    <Folder Include="Views\ProductSetup\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,18 +1,19 @@
-﻿app.controller('menuController', ["$scope", "$window", "$location", "$filter", "$timeout", "menuService", function ($scope, $window, $location, $filter, $timeout, menuService) {
-    $scope.name = "DokanBD";
+﻿app.controller('productSetupController', ["$scope", "$window", "$location", "$filter", "$timeout", "productSetupService", function ($scope, $window, $location, $filter, $timeout, productSetupService) {
     $scope.obj = {};
-    $scope.obj.Virus = {};
-    getgriddata();
-    function getgriddata() {
-        $scope.menudata = [];
-        var gridData = menuService.GetMenuData();
-        gridData.then(function (data) {
-            $scope.obj.Virus = JSON.parse(data);
-            console.log($scope.obj.Virus);
+    $scope.obj.ambulance = {};
+    getHomeData();
+    function getHomeData() {
+        var categoriesData = productSetupService.GetCategories();
+        categoriesData.then(function (data) {
+            $scope.obj.ambulance = JSON.parse(data);
+            console.log($scope.obj.ambulance);
         });
+       
     }
 }
 ]);
+
+
 app.filter('propsFilter', function () {
     return function (items, props) {
         var out = [];
@@ -44,5 +45,3 @@ app.filter('propsFilter', function () {
         return out;
     };
 });
-
-
