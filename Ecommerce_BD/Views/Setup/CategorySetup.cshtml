@@ -1,30 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "ProductSetup";
+    ViewBag.Title = "CategorySetup";
 }
 
-<script src="~/Apps/JScontrollers/Setup/productSetupController.js"></script>
-<script src="~/Apps/JSservices/Setup/productSetupService.js"></script>
+<h2>CategorySetup</h2>
 
-<style>
-    .float-right {
-        float: right;
-    }
-
-    .float-left {
-        float: left;
-    }
-</style>
-<h2>ProductSetup</h2>
-
-
-<div class="row" ng-app="EcommerceBD" ng-controller="productSetupController">
+<div class="row" ng-app="EcommerceBD" ng-controller="categorySetupController">
     <div class="row">
         <div class="col-md-2">
             <label class="float-right">Product Name :</label>
         </div>
         <div class="col-md-2">
-            <input id="txtProductName" class="form-control float-left" style="width:250px;"/>
+            <input id="txtProductName" class="form-control float-left" style="width:250px;" />
         </div>
         <div class="col-md-2">
             <label class="float-right">Category :</label>
@@ -37,7 +24,7 @@
                         <div ng-bind-html="A.Category_Name | highlight: $select.search"></div>
                     </ui-select-choices>
                 </ui-select>
-                <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Category_Id" ng-bind="obj.Category_Id = obj.A.selected.Category_Id" class="hidden"/>
+                <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Category_Id" ng-bind="obj.Category_Id = obj.A.selected.Category_Id" class="hidden" />
             </div>
         </div>
         <div class="col-md-2">
@@ -51,7 +38,7 @@
                         <div ng-bind-html="B.Brand_Name | highlight: $select.search"></div>
                     </ui-select-choices>
                 </ui-select>
-                <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Brand_Id" ng-bind="obj.Brand_Id = obj.B.selected.Brand_Id" class="hidden"/>
+                <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Brand_Id" ng-bind="obj.Brand_Id = obj.B.selected.Brand_Id" class="hidden" />
             </div>
         </div>
     </div>
@@ -67,5 +54,3 @@
         </div>
     </div>
 </div>
-
-

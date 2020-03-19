@@ -11,6 +11,13 @@ namespace Ecommerce_BD_DAL.Repository.Implement.Setup
     public class ProductSetupRepository:IProductSetup
     {
        readonly ProductSetupDAL _productSetupDal = new ProductSetupDAL();
+
+        public DataTable GetBrandData()
+        {
+            var data = _productSetupDal.GetBrandData();
+            return data;
+        }
+
         public DataTable GetCategoriesData()
         {
             var data = _productSetupDal.GetCategoriesData();

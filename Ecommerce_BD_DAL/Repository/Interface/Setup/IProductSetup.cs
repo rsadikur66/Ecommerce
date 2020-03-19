@@ -10,5 +10,6 @@ namespace Ecommerce_BD_DAL.Repository.Interface.Setup
     public interface IProductSetup
     {
         DataTable GetCategoriesData();
+        DataTable GetBrandData();
     }
 }
