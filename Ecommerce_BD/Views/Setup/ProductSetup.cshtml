@@ -32,9 +32,9 @@
         <div class="col-md-2">
             <div class="ng-cloak">
                 <ui-select ng-model="obj.A.selected" theme="select2" append-to-body="true" style="min-width: 245px">
-                    <ui-select-match placeholder="Select">{{$select.selected.Category_Name}}</ui-select-match>
+                    <ui-select-match placeholder="Select">{{$select.selected.T_LANG2_NAME}}</ui-select-match>
                     <ui-select-choices repeat="A in obj.categories | propsFilter: {Category_Name: $select.search}">
-                        <div ng-bind-html="A.Category_Name | highlight: $select.search"></div>
+                        <div ng-bind-html="A.T_LANG2_NAME | highlight: $select.search"></div>
                     </ui-select-choices>
                 </ui-select>
                 <input type="text" id="ddlIAmbCapaCode" ng-model="obj.Category_Id" ng-bind="obj.Category_Id = obj.A.selected.Category_Id" class="hidden"/>

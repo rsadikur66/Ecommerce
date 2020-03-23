@@ -23,7 +23,6 @@
 }
 ]);
 
-
 app.filter('propsFilter', function () {
     return function (items, props) {
         var out = [];

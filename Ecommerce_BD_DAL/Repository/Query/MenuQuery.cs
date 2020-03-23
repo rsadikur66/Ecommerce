@@ -14,12 +14,12 @@ namespace Ecommerce_BD_DAL.Repository.Query
         }
         public DataTable GetMenuData()
         {
-            return Query($"SELECT CATEGORY_ID,CATEGORY_NAME FROM CATEGORIES");
+            return Query($"SELECT CATEGORY_ID,T_LANG2_NAME FROM CATEGORIES");
         }
 
         public DataTable GetHomeData()
         {
-            return Query($"SELECT Product_Name,Brand_Name,Category_Name,Picture,Price FROM Products left JOIN Brands on Brands.Brand_Id = Products.Product_Id LEFT JOIN Categories on Categories.Category_Id = Products.Category_Id");
+            return Query($"SELECT Product_Name,Brand_Name,T_LANG2_NAME,Picture,Price FROM Products left JOIN Brands on Brands.Brand_Id = Products.Product_Id LEFT JOIN Categories on Categories.Category_Id = Products.Category_Id");
         }
         
     }
