@@ -22,8 +22,15 @@
     $scope.Save = function () {
         var insert = categorySetupService.insertData($scope.obj.cat);
         insert.then(function (data) {
-            alert(data);
-        })
+            if (data === "True") {
+                alert('Data Save successfully!!!');
+                clear();
+            }
+        });
     };
+
+    function clear() {
+        $scope.obj.cat = {};        
+    }
 }
 ]);

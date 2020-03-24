@@ -78,6 +78,7 @@
     <Compile Include="Repository\Interface\IMenu.cs" />
     <Compile Include="Repository\Interface\Setup\ICategorySetup.cs" />
     <Compile Include="Repository\Interface\Setup\IProductSetup.cs" />
+    <Compile Include="Repository\Model\Setup\CategorySetupModel.cs" />
     <Compile Include="Repository\Query\MenuQuery.cs" />
     <Compile Include="Repository\Query\Setup\CategorySetupDAL.cs" />
     <Compile Include="Repository\Query\Setup\ProductSetupDAL.cs" />
