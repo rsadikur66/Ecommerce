@@ -1,18 +1,27 @@
 ﻿app.controller('productSetupController', ["$scope", "$window", "$location", "$filter", "$timeout", "productSetupService", function ($scope, $window, $location, $filter, $timeout, productSetupService) {
     $scope.obj = {};
-    $scope.obj.ambulance = {};
-    getHomeData();
-    function getHomeData() {
+    $scope.obj.ambulance = [];
+    getCategoriesData();
+    getBrandsData();
+    function getCategoriesData() {
         var categoriesData = productSetupService.GetCategories();
         categoriesData.then(function (data) {
-            $scope.obj.ambulance = JSON.parse(data);
-            console.log($scope.obj.ambulance);
+            $scope.obj.categories = JSON.parse(data);
+            console.log($scope.obj.categories);
         });
        
     }
+    function getBrandsData() {
+        var brandsData = productSetupService.GetBrands();
+        brandsData.then(function (data) {
+            $scope.obj.brands = JSON.parse(data);
+            console.log($scope.obj.brands);
+        });
+       
+    }
+
 }
 ]);
-
 
 app.filter('propsFilter', function () {
     return function (items, props) {

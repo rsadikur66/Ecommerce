@@ -18,10 +18,12 @@
 
     @*js links starts*@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/select.js"></script>
+    <script src="~/Scripts/angular-sanitize.min.js"></script>
+
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <script src="~/Apps/app.js"></script>
@@ -70,7 +72,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Home</a>
                     <ul class="collapse list-unstyled scrollable-menu" id="homeSubmenu">
                         <li ng-repeat="item in obj.Virus" >
-                            <a href="~/Home/Index">{{item.CATEGORY_NAME}}</a>
+                            <a href="~/Home/Index">{{item.T_LANG2_NAME}}</a>
                         </li>
                         @*<li>
                             <a href="#">Invoice</a>
@@ -87,7 +89,7 @@
                             <a href="../Setup/ProductSetup">Product Setup</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="../Setup/CategorySetup">Category Setup</a>
                         </li>
                         <li>
                             <a href="#">Page 3</a>

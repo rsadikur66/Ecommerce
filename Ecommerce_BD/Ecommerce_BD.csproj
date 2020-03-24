@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\Setup\CategorySetupController.cs" />
     <Compile Include="Controllers\Setup\ProductSetupController.cs" />
     <Compile Include="Controllers\Setup\SetupController.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,9 +188,11 @@
     <Content Include="Apps\app.js" />
     <Content Include="Apps\JScontrollers\homeController.js" />
     <Content Include="Apps\JScontrollers\menuController.js" />
+    <Content Include="Apps\JScontrollers\Setup\categorySetupController.js" />
     <Content Include="Apps\JScontrollers\Setup\productSetupController.js" />
     <Content Include="Apps\JSservices\homeService.js" />
     <Content Include="Apps\JSservices\menuService.js" />
+    <Content Include="Apps\JSservices\Setup\categorySetupService.js" />
     <Content Include="Apps\JSservices\Setup\productSetupService.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -255,6 +258,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1031,10 +1035,12 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Setup\ProductSetup.cshtml" />
+    <Content Include="Views\Setup\CategorySetup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\CategorySetup\" />
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\ProductSetup\" />
   </ItemGroup>

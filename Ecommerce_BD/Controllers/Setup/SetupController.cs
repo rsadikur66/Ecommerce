@@ -18,6 +18,10 @@ namespace Ecommerce_BD.Controllers.Setup
         {
             return View();
         }
+       public ActionResult CategorySetup()
+        {
+            return View();
+        }
        
     }
 }

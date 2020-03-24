@@ -37,5 +37,21 @@ namespace Ecommerce_BD.Controllers.Setup
                 return Json(exc.Message, JsonRequestBehavior.AllowGet);
             }
         }
+
+        [HttpGet]
+        public ActionResult GetBrands()
+        {
+            try
+            {
+                var itemBrandsData = repository.GetBrandData();
+                string JSONstring = string.Empty;
+                JSONstring = JsonConvert.SerializeObject(itemBrandsData);
+                return Json(JSONstring, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception exc)
+            {
+                return Json(exc.Message, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }
