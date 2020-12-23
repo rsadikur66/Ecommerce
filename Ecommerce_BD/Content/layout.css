@@ -63,7 +63,7 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #32806b9e;
+    background: #555;
     color: #fff;
     transition: all 0.3s;
 }
