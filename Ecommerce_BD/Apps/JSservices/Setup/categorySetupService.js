@@ -1,9 +1,11 @@
-﻿app.service("categorySetupService", ["$http", function ($http) {
+﻿
+app.service("categorySetupService", ["$http", function ($http) {
     var dataService = {
         //menudata: MenuData,
         //UserLogout: UserLogout,
-        //GetCategories: GetCategories,
-        insertData: insertData
+        GetCategories: GetCategories,
+        insertData: insertData,
+        updateData: updateData
 
     };
     return dataService;
@@ -28,7 +30,7 @@
 
     function GetCategories() {
         try {
-            var url = "/ProductSetup/GetCategories";
+            var url = "/CategorySetup/GetAllCategoriesData";
             var params = {};
             return $http({
                 url: url,
@@ -45,7 +47,7 @@
     }
     function GetBrands() {
         try {
-            var url = "/ProductSetup/GetBrands";
+            var url = "/CategorySetup/GetBrands";
             var params = {};
             return $http({
                 url: url,
@@ -80,6 +82,24 @@
 
         try {
             var url = '/CategorySetup/InsertData';
+            return $http({
+                url: url,
+                method: "POST",
+                data: JSON.stringify(cat)
+            }).then(function (results) {
+                return results.data;
+            }).catch(function (ex) {
+                throw ex;
+            });
+        } catch (ex) {
+            throw ex;
+        }
+    }
+
+    function updateData (cat) {
+
+        try {
+            var url = '/CategorySetup/UpdateData';
             return $http({
                 url: url,
                 method: "POST",

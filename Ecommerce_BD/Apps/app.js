@@ -1,5 +1,5 @@
 ﻿/// <reference path="../scripts/angular.min.js" />
-
+/// <reference path="../../../scripts/angular_intellisense.js" />
 var app = angular.module('EcommerceBD', ['ui.select','ngSanitize']);
 
 app.run(function ($rootScope, $templateCache) {

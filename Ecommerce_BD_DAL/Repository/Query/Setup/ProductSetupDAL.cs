@@ -10,7 +10,7 @@ namespace Ecommerce_BD_DAL.Repository.Query.Setup
     {
         public DataTable GetCategoriesData()
         {
-            return Query($@"select Category_Id,Category_Name from Categories");
+            return Query($@"SELECT CATEGORY_ID,T_LANG1_NAME,T_LANG2_NAME from CATEGORIES");
         }
         public DataTable GetBrandData()
         {
