@@ -64,6 +64,24 @@ namespace Ecommerce_BD.Controllers.Setup
             return Message;
 
         }
+        public string DeleteCatData(int CATEGORY_ID)
+        {
+            string Message = "";
+            try
+            {
+                if (repository.DeleteData(CATEGORY_ID))
+                {
+                    Message = "Data Deleted Successfully!";
+                }
+            }
+            catch (Exception exc)
+            {
+
+                return Message = "Data Not deleted!";
+            }
+            return Message;
+
+        }
 
 
 

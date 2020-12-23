@@ -57,7 +57,7 @@ background-color:#808080;
             <input type="button" id="btnSave" class="btn btn-primary" ng-click="Save()" value="{{buttonText}}" title="Save" />
         </div>
         <div class="col-md-1">
-            <input type="button" id="btnSave" class="btn btn-danger" ng-click="Delete()" value="Delete" title="Delete" />
+            
         </div>
         <div class="col-md-1">
             <input type="button" id="btnReport" class="btn btn-primary" ng-click="Print()" value="Report" title="Report" />
@@ -75,8 +75,11 @@ background-color:#808080;
             </tr>
             <tr ng-repeat="v in obj.categories" ng-class="{red: hover}" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="rowSelect(v)">
                 <td>{{v.CATEGORY_ID}}</td>
-                <td>{{v.T_LANG1_NAME}}</td>
+                <td><input type="text" id="txtBanglaName" placeholder="category name bangla" /><span>{{v.T_LANG1_NAME}}</span></td>
                 <td>{{v.T_LANG2_NAME}}</td>
+                <td><input type="button" id="btnSave" class="btn btn-danger" ng-click="Delete()" value="Delete" title="Delete" />
+                <input type="button" id="btnEdit" class="btn btn-default" ng-click="btnEdit()" value="Edit" title="Edit"/>
+                </td>
             </tr>
         </table>
     </div>

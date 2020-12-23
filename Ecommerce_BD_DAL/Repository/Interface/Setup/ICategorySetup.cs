@@ -12,5 +12,6 @@ namespace Ecommerce_BD_DAL.Repository.Interface.Setup
         DataTable GetAllCategories();
         bool InsertData(string lang1, string lang2);
         bool UpdateData(int catId, string lang1, string lang2);
+        bool DeleteData(int catId);
     }
 }

@@ -20,13 +20,21 @@ namespace Ecommerce_BD_DAL.Repository.Query.Setup
         }
         public bool UpdateData(int catId, string lang1,string lang2)
         {
-            Command($@"UPDATE CATEGORIES SET  T_LANG1_NAME='{lang1}',T_LANG2_NAME='{lang2}' WHERE CATEGORY_ID = {catId};");
+            Command($@"UPDATE CATEGORIES SET  T_LANG1_NAME='{lang1}',T_LANG2_NAME='{lang2}' WHERE CATEGORY_ID = {catId}");
             return true;
         }
+        public bool DeleteData(int catId)
+        {
+            Command($@"DELETE FROM CATEGORIES WHERE CATEGORY_ID ='{catId}'");
+            return true;
+        }
+
         public DataTable GetReportData()
         {
            var data = Query($@"Select * from CATEGORIES");
             return data;
         }
+       
+
     }
 }

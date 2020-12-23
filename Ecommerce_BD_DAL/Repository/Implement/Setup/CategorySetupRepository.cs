@@ -27,5 +27,11 @@ namespace Ecommerce_BD_DAL.Repository.Implement.Setup
             var data = _categorySetupDal.UpdateData(catId, lang1,lang2);
             return data;
         }
+        public bool DeleteData(int catId)
+        {
+            var data = _categorySetupDal.DeleteData(catId);
+            return data;
+        }
+
     }
 }
