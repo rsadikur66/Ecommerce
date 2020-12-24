@@ -1,17 +1,19 @@
 ﻿app.controller('categorySetupController', ["$scope", "$window", "$location", "$filter", "$timeout", "categorySetupService", function ($scope, $window, $location, $filter, $timeout, categorySetupService) {
     $scope.obj = {};
     $scope.obj.cat = {};
-    getCategoriesData();
+    $scope.obj.categories = [];    
     $scope.buttonText = "Save";
+    getCategoriesData();
     //document.getElementById('#txtBanglaName').hidden = true;
     //Get Category List();
-    function getCategoriesData() {        
-        var categoriesData = categorySetupService.GetCategories();
+    function getCategoriesData() {
+        var categoriesData = categorySetupService.GetCategories()
         categoriesData.then(function (data) {
             $scope.obj.categories = JSON.parse(data);
-            console.log($scope.obj.categories);
+            //console.log($scope.obj.categories);
+            pagination()            
         });
-    }    
+    }
     //Get Category List end
 
     //Category Insert & update Starts----
@@ -39,7 +41,7 @@
                 alert("You Must input both field.")
             };
         }
-               
+
     };
     //Category Insert & update Ends----
 
@@ -51,18 +53,19 @@
             clear();
         })
     }
-    //$scope.rowSelect = function (data) {
-    //    $scope.obj.cat.CATEGORY_ID = data.CATEGORY_ID;
-    //    $scope.obj.cat.T_LANG2_NAME = data.T_LANG2_NAME;
-    //    $scope.obj.cat.T_LANG1_NAME = data.T_LANG1_NAME;
-    //    $scope.buttonText = "Update";
-    //};
+    $scope.rowSelect = function (data,index) {
+        $scope.obj.cat.CATEGORY_ID = data.CATEGORY_ID;
+        $scope.obj.cat.T_LANG2_NAME = data.T_LANG2_NAME;
+        $scope.obj.cat.T_LANG1_NAME = data.T_LANG1_NAME;
+        $scope.selectedRow = index;
+        $scope.buttonText = "Update";
+    };
 
     //For Print Service start---
     $scope.Print = function () {
         //$window.open("../Q74001/R74001ReportWaittingAmbulance? popup",
         //    "width= 600, height = 600, left = 100, top = 50");
-        $window.open("../CategorySetup/PrintReport?popup","width = 600,height=600,left = 100, top = 50")
+        $window.open("../CategorySetup/PrintReport?popup", "width = 600,height=600,left = 100, top = 50")
     }
     //For Print Service end
 
@@ -70,5 +73,16 @@
         $scope.obj.cat.T_LANG1_NAME = "";
         $scope.obj.cat.T_LANG2_NAME = "";
     }
+
+
+    function pagination() {
+        $scope.obj.totalItems = $scope.obj.categories.length;
+        $scope.obj.currentPage = 1;
+        $scope.obj.itemsPerPage = 5;
+        $scope.obj.maxSize = 5; //Number of pager buttons to show
+    }
+
+
+
 }
 ]);

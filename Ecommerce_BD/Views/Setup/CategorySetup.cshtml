@@ -2,25 +2,35 @@
 @{
     ViewBag.Title = "CategorySetup";
 }
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 <script src="~/Apps/JScontrollers/Setup/categorySetupController.js"></script>
 <script src="~/Apps/JSservices/Setup/categorySetupService.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 <style>
     .margin_top {
         margin-top: 1%;
     }
+
     .red {
         background-color: #A4F5A3;
     }
-    #CatTable{
-        background-color:#b581cc;
-        font-weight:bold;
+
+    #CatTable {
+        background-color: #ffffff;
+        font-weight: bold;
         /*color:#ffffff;*/
     }
-    #CatTable th{
-font-size:20px;
-text-align:center;
-color:#45add5;
-background-color:#808080;
+
+        #CatTable th {
+            font-size: 20px;
+            text-align: center;
+            color: #45add5;
+            background-color: #808080;
+        }
+    .selected {
+        background-color: black;
+        color: white;
+        font-weight: bold;
     }
 </style>
 
@@ -32,7 +42,7 @@ background-color:#808080;
             <label class="float-right">Category Id:</label>
         </div>
         <div class="col-md-2 hidden">
-            <input id="txtCategoryId" ng-model="obj.cat.CATEGORY_ID" class="form-control float-left" style="width:250px;"/>
+            <input id="txtCategoryId" ng-model="obj.cat.CATEGORY_ID" class="form-control float-left" style="width:250px;" />
         </div>
     </div>
     <div class="row">
@@ -55,9 +65,10 @@ background-color:#808080;
         <div class="col-md-2"></div>
         <div class="col-md-1">
             <input type="button" id="btnSave" class="btn btn-primary" ng-click="Save()" value="{{buttonText}}" title="Save" />
+
         </div>
         <div class="col-md-1">
-            
+            <input type="button" id="btnSave" class="btn btn-danger" ng-click="Delete()" value="Delete" title="Delete" />
         </div>
         <div class="col-md-1">
             <input type="button" id="btnReport" class="btn btn-primary" ng-click="Print()" value="Report" title="Report" />
@@ -67,20 +78,28 @@ background-color:#808080;
     <br />
 
     <div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+            </div>
+        </form>
         <table id="CatTable" class="table table-bordered">
             <tr>
                 <th>Category Id</th>
                 <th>Category Name Bangla</th>
                 <th>Category Name English</th>
             </tr>
-            <tr ng-repeat="v in obj.categories" ng-class="{red: hover}" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="rowSelect(v)">
+            <tr ng-repeat="v in obj.categories.slice(((obj.currentPage-1)*obj.itemsPerPage), ((obj.currentPage)*obj.itemsPerPage))|filter:search" ng-class="{red:hover,'selected':$index == selectedRow}" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="rowSelect(v,$index)">
+                <td hidden>{{$index}}</td>
                 <td>{{v.CATEGORY_ID}}</td>
-                <td><input type="text" id="txtBanglaName" placeholder="category name bangla" /><span>{{v.T_LANG1_NAME}}</span></td>
+                <td>{{v.T_LANG1_NAME}}</td>
                 <td>{{v.T_LANG2_NAME}}</td>
-                <td><input type="button" id="btnSave" class="btn btn-danger" ng-click="Delete()" value="Delete" title="Delete" />
-                <input type="button" id="btnEdit" class="btn btn-default" ng-click="btnEdit()" value="Edit" title="Edit"/>
-                </td>
             </tr>
+            <tr>
+                <pagination total-items="obj.totalItems" ng-model="obj.currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="obj.itemsPerPage"></pagination>               
+            </tr>
+
         </table>
     </div>
 </div>
