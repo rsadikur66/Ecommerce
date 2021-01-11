@@ -1042,9 +1042,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Setup\ProductSetup.cshtml" />
     <Content Include="Views\Setup\CategorySetup.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

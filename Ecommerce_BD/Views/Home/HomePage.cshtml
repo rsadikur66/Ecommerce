@@ -1,7 +1,7 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "HomePage";
 }
+
 
 <script src="~/Apps/JScontrollers/homeController.js"></script>
 <script src="~/Apps/JSservices/homeService.js"></script>
@@ -15,7 +15,7 @@
     .divhresize {
         height: 50vh;
         width: 24%;
-        margin-right:5px;
+        margin-right: 5px;
         background-color: transparent;
     }
 
@@ -27,7 +27,7 @@
 </style>
 <div ng-app="EcommerceBD" ng-controller="homeController">
 
-    <h3>Electronics</h3>
+    <h3>{{CategoryHeading}}</h3>
     @*<table class="table table-bordered">
             <thead>
                 <tr>

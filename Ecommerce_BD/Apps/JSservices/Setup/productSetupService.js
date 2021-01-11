@@ -2,7 +2,7 @@
     var dataService = {
         //menudata: MenuData,
         //UserLogout: UserLogout,
-        GetCategories: GetCategories,
+        //GetCategories: GetCategories,
         GetBrands: GetBrands
 
     };

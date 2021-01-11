@@ -1,8 +1,8 @@
 ﻿app.controller('productSetupController', ["$scope", "$window", "$location", "$filter", "$timeout", "productSetupService", function ($scope, $window, $location, $filter, $timeout, productSetupService) {
     $scope.obj = {};
     $scope.obj.ambulance = [];
-    getCategoriesData();
-    getBrandsData();
+    //getCategoriesData();
+    //getBrandsData();
     function getCategoriesData() {
         var categoriesData = productSetupService.GetCategories();
         categoriesData.then(function (data) {

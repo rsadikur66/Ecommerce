@@ -4,7 +4,7 @@
     $scope.obj.categories = [];    
     $scope.buttonText = "Save";
     getCategoriesData();
-    //document.getElementById('#txtBanglaName').hidden = true;
+   
     //Get Category List();
     function getCategoriesData() {
         var categoriesData = categorySetupService.GetCategories()
@@ -65,7 +65,7 @@
     $scope.Print = function () {
         //$window.open("../Q74001/R74001ReportWaittingAmbulance? popup",
         //    "width= 600, height = 600, left = 100, top = 50");
-        $window.open("../CategorySetup/PrintReport?popup", "width = 600,height=600,left = 100, top = 50")
+        $window.open("../CategorySetup/PrintReport?popup", "width = 600,height=600,left = 100, top = 50");
     }
     //For Print Service end
 
